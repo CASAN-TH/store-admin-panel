@@ -17,6 +17,10 @@ const routes: Routes = [
     loadChildren: () => import("./orders/orders.module").then(m=>m.OrdersModule)
   },
   {
+    path: "customers",
+    loadChildren: () => import("./customer/customer.module").then(m=>m.CustomerModule)
+  },
+  {
     path: "",
     component: DashComponent
   }
