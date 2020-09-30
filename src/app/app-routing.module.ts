@@ -15,7 +15,11 @@ const routes: Routes = [
   {
     path: "",
     component: DashComponent
-  }
+  },
+  {
+    path: "suppliers",
+    loadChildren: () => import("./suppliers/suppliers.module").then(m=>m.SuppliersModule)
+  },
 ];
 
 @NgModule({
