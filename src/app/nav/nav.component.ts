@@ -16,7 +16,7 @@ export class NavComponent {
       shareReplay()
     );
 
-    menuItem = ["dashboard", "sales", "orders", "customers", "products"];
+    menuItem = ["dashboard", "sales", "orders", "customers", "products","suppliers"];
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 

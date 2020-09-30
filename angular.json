@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "store-admin-panel"
+    }
+  },
+  "defaultProject": "store-admin-panel",
+  "cli": {
+    "analytics": false
+  }
 }
