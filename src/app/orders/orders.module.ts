@@ -13,6 +13,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 const routes: Routes = [
 
@@ -40,7 +41,8 @@ const routes: Routes = [
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule,
 
   ]
 })
