@@ -9,6 +9,10 @@ const routes: Routes = [
     component: DashComponent
   },
   {
+    path: "sales",
+    loadChildren: () => import("./sale/sale.module").then(m=>m.SaleModule)
+  },
+  {
     path: "",
     component: DashComponent
   }
