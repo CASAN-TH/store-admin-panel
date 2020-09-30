@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () => import("./sale/sale.module").then(m=>m.SaleModule)
   },
   {
+    path: "customers",
+    loadChildren: () => import("./customer/customer.module").then(m=>m.CustomerModule)
+  },
+  {
     path: "",
     component: DashComponent
   }
