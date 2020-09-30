@@ -10,20 +10,28 @@ const routes: Routes = [
   },
   {
     path: "sales",
-    loadChildren: () => import("./sale/sale.module").then(m=>m.SaleModule)
+    loadChildren: () => import("./sale/sale.module").then(m => m.SaleModule)
   },
   {
     path: "orders",
-    loadChildren: () => import("./orders/orders.module").then(m=>m.OrdersModule)
+    loadChildren: () => import("./orders/orders.module").then(m => m.OrdersModule)
   },
   {
     path: "customers",
-    loadChildren: () => import("./customer/customer.module").then(m=>m.CustomerModule)
+    loadChildren: () => import("./customer/customer.module").then(m => m.CustomerModule)
   },
   {
     path: "",
     component: DashComponent
-  }
+  },
+  {
+    path: "products",
+    loadChildren: () => import("./product/product.module").then(m => m.ProductModule)
+  },
+  {
+    path: "suppliers",
+    loadChildren: () => import("./suppliers/suppliers.module").then(m => m.SuppliersModule)
+  },
 ];
 
 @NgModule({
