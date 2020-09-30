@@ -13,6 +13,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import {  MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 const routes: Routes = [
   {
@@ -40,6 +41,7 @@ const routes: Routes = [
     MatCardModule,
     MatIconModule,
     ReactiveFormsModule,
+    MatMenuModule
   ]
 })
 export class CustomerModule { }
