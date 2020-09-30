@@ -24,6 +24,14 @@ const routes: Routes = [
     path: "suppliers",
     loadChildren: () => import("./suppliers/suppliers.module").then(m => m.SuppliersModule)
   },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
+  {
+    path:'**',
+    redirectTo:'dashboard'
+  }
 ];
 
 @NgModule({
