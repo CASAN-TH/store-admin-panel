@@ -3,11 +3,17 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-
+import{SuppliersService } from '../suppliers.service';
 // TODO: Replace this with your own data model type
 export interface ListItem {
   name: string;
   id: number;
+  // address1: string;
+  // postcode: number;
+  // city: string;
+  // District: string;
+  // country: string;
+  // Phone: number;
 }
 
 // TODO: replace this with real data from your application
@@ -40,12 +46,16 @@ const EXAMPLE_DATA: ListItem[] = [
  * (including sorting, pagination, and filtering).
  */
 export class ListDataSource extends DataSource<ListItem> {
-  data: ListItem[] = EXAMPLE_DATA;
+  data: ListItem[];
   paginator: MatPaginator;
   sort: MatSort;
 
-  constructor() {
+  constructor(private suppliersService:SuppliersService) {
     super();
+    this.suppliersService.getSuppliers().subscribe((res) => {
+      console.log(res);
+      this.data=res;
+    })
   }
 
   /**

@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
+import { SuppliersService } from '../suppliers.service';
 import { ListDataSource, ListItem } from './list-datasource';
 
 
@@ -20,9 +21,11 @@ export class ListComponent implements AfterViewInit, OnInit {
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name','menu'];
+  
+  constructor(private suppliersService:SuppliersService){}
 
   ngOnInit() {
-    this.dataSource = new ListDataSource();
+    this.dataSource = new ListDataSource(this.suppliersService);
   }
 
   ngAfterViewInit() {
