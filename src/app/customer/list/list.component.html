@@ -19,13 +19,13 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu  #menu="matMenu" >
+        <button mat-menu-item [routerLink]="['/customers/form/']">
+          <mat-icon>create</mat-icon>
+          <span>Edit</span>
+        </button>
         <button mat-menu-item  >
           <mat-icon>delete</mat-icon>
           <span>delete</span>
-        </button>
-        <button mat-menu-item [routerLink]="['/customers/form/new']">
-          <mat-icon>calendar_view_day</mat-icon>
-          <span>View</span>
         </button>
       </mat-menu>
       </td>

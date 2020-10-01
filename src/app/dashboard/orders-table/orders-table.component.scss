@@ -1,9 +1,8 @@
 .full-width-table {
   width: 100%;
 }
-/*table.component.css*/
 
 .small-table{
-  height: 600px;
   overflow: scroll !important;
+  max-height: 600px;
 }
