@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { ListDataSource, ListItem } from './list-datasource';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-list',
@@ -17,9 +18,12 @@ export class ListComponent implements AfterViewInit, OnInit {
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name','manu'];
+  constructor(private customerService: CustomerService) { }
+
 
   ngOnInit() {
-    this.dataSource = new ListDataSource();
+    this.dataSource = new ListDataSource(this.customerService);
+
   }
 
   ngAfterViewInit() {
