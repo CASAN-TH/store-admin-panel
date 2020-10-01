@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { OrderService } from '../order.service';
 
 // TODO: Replace this with your own data model type
 export interface ListItem {
@@ -11,28 +12,28 @@ export interface ListItem {
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: ListItem[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
-];
+// const EXAMPLE_DATA: ListItem[] = [
+//   {id: 1, name: 'Hydrogen'},
+//   {id: 2, name: 'Helium'},
+//   {id: 3, name: 'Lithium'},
+//   {id: 4, name: 'Beryllium'},
+//   {id: 5, name: 'Boron'},
+//   {id: 6, name: 'Carbon'},
+//   {id: 7, name: 'Nitrogen'},
+//   {id: 8, name: 'Oxygen'},
+//   {id: 9, name: 'Fluorine'},
+//   {id: 10, name: 'Neon'},
+//   {id: 11, name: 'Sodium'},
+//   {id: 12, name: 'Magnesium'},
+//   {id: 13, name: 'Aluminum'},
+//   {id: 14, name: 'Silicon'},
+//   {id: 15, name: 'Phosphorus'},
+//   {id: 16, name: 'Sulfur'},
+//   {id: 17, name: 'Chlorine'},
+//   {id: 18, name: 'Argon'},
+//   {id: 19, name: 'Potassium'},
+//   {id: 20, name: 'Calcium'},
+// ];
 
 /**
  * Data source for the List view. This class should
@@ -40,12 +41,16 @@ const EXAMPLE_DATA: ListItem[] = [
  * (including sorting, pagination, and filtering).
  */
 export class ListDataSource extends DataSource<ListItem> {
-  data: ListItem[] = EXAMPLE_DATA;
+  data: ListItem[];
   paginator: MatPaginator;
   sort: MatSort;
 
-  constructor() {
+  constructor(private orderService: OrderService) {
     super();
+    this.orderService.getOrder().subscribe((res: any) => {
+      console.log(res);
+      this.data = res;
+    })
   }
 
   /**
@@ -71,7 +76,7 @@ export class ListDataSource extends DataSource<ListItem> {
    *  Called when the table is being destroyed. Use this function, to clean up
    * any open connections or free any held resources that were set up during connect.
    */
-  disconnect() {}
+  disconnect() { }
 
   /**
    * Paginate the data (client-side). If you're using server-side pagination,
