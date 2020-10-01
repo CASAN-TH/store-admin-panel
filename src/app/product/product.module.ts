@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './list/list.component';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   },
   {
     path:"form/:id",
+    component:FormComponent
+  },
+  {
+    path:"form",
     component:FormComponent
   }
 ];
@@ -53,6 +58,8 @@ const routes: Routes = [
     MatCardModule,
 
     MatIconModule,
+    
+    MatMenuModule,
     
     ReactiveFormsModule
   ]
