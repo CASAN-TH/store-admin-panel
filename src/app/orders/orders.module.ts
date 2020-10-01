@@ -14,6 +14,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
 
@@ -43,6 +44,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatIconModule,
     MatMenuModule,
+    HttpClientModule
 
   ]
 })

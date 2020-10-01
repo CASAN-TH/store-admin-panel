@@ -31,16 +31,10 @@ export class OrdersTableComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource = new OrdersTableDataSource(this.orderService);
-    this.orderService.getOrderCount().subscribe({
-      next: orderCount => {
-        console.log(orderCount);
-        this.dataSource.data = orderCount;
-        this.dataLength = orderCount.length;
-        this.dataSource.sort = this.sort;
-        this.dataSource.paginator = this.paginator;
-        this.table.dataSource = this.dataSource;
-        console.log(this.dataLength);
-      },
-    });
+  }
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    this.table.dataSource = this.dataSource;
   }
 }
