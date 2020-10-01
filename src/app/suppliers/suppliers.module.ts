@@ -25,10 +25,7 @@ const routes: Routes = [
     path:"form/:id",
     component: FormComponent
   },
-  {
-    path:"form",
-    component: FormComponent
-  }
+ 
 ]
 
 
