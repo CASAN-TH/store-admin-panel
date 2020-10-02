@@ -1,5 +1,6 @@
+import { OrderService } from './../order.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,15 +8,18 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent {
-  addressForm = this.fb.group({
-    company: null,
-    firstName: [null, Validators.required],
-    lastName: [null, Validators.required],
-    address: [null, Validators.required],
-    address2: null,
-    city: [null, Validators.required],
-    state: [null, Validators.required],
+export class FormComponent implements OnInit{
+
+  id:any;
+
+  orderForm = this.fb.group({
+    id: null,
+    date: [null, Validators.required],
+    name: [null, Validators.required],
+    status: [null, Validators.required],
+    orderTotal: null,
+    paymentMode: [null, Validators.required],
+
     postalCode: [null, Validators.compose([
       Validators.required, Validators.minLength(5), Validators.maxLength(5)])
     ],
@@ -86,10 +90,30 @@ export class FormComponent {
     {name: 'Wyoming', abbreviation: 'WY'}
   ];
 
-  constructor(private fb: FormBuilder, private router:ActivatedRoute) {}
+  constructor(private fb: FormBuilder, private router:ActivatedRoute,private orderService:OrderService) {}
 
+  ngOnInit(){
+    this.id = this.router.snapshot.params.id;
+    this.orderService.getOrderById(this.id).subscribe((res:any)=>{
+      this.id = res;
+      if(res){
+        this.orderForm = this.editForm(res);
+      }
+    })
+  }
 
-  // onSubmit() {
-  //   alert('Thanks!');
-  // }
+  editForm(orderData):FormGroup{
+    return this.fb.group({
+      id: orderData.id,
+      date: [orderData.date, Validators.required],
+      name: [orderData.name, Validators.required],
+      status: [orderData.status, Validators.required],
+      orderTotal: orderData.orderTotal,
+      paymentMode: [orderData.paymentMode, Validators.required],
+    })
+  }
+
+  onSubmit() {
+    alert('Thanks!');
+  }
 }
