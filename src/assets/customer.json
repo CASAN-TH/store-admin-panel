@@ -1,52 +1,10 @@
-[
-  {
-    "id": 605604,
-    "name": "ANSUNG HERVY INDRUDTRIES CE",
-    "address1": "493 BANWEOL DONG",
-    "postcode": "445-330",
-    "city": "HWASUNG CITY",
-    "district": "",
-    "country": "Coree du Sud",
-    "phone": 2291282
-  },
-  {
-    "id": 609620,
-    "name": "ARTSILA FINLAND EY",
-    "address1": "TARHAAJANTIE 2",
-    "postcode": "65101",
-    "city": "VAASA",
-    "district": "",
-    "country": "Finland",
-    "phone": 107009000
-  },
-  {
-    "id": 612344,
-    "name": "TRADIS",
-    "address1": "B.P.20354",
-    "postcode": "",
-    "city": "LOME",
-    "district": "",
-    "country": "TOGO",
-    "phone": 0
-  },
-  {
-    "id": 612742,
-    "name": "YUNDAI HEAVY INDRUSTRIES CE LTD",
-    "address1": "306-1 SEONAM-DONG NAM-GU",
-    "postcode": "608-818",
-    "city": "ULSAN",
-    "district": "",
-    "country": "Coree du Sud",
-    "phone": 8252230247
-  },
-  {
-    "id": 631518,
-    "name": "GE GADEN",
-    "address1": "RUE BOUET WILLEAUMEZ-BP 3916",
-    "postcode": "",
-    "city": "LIBREVILLE",
-    "district": "",
-    "country": "Gabon",
-    "phone": 241760176
-  }
-]
+{
+  "id": 605604,
+  "name": "ANSUNG HERVY INDRUDTRIES CE",
+  "address1": "493 BANWEOL DONG",
+  "postcode": "445-330",
+  "city": "HWASUNG CITY",
+  "district": "",
+  "country": "Coree du Sud",
+  "phone": 2291282
+}
