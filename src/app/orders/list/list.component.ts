@@ -30,7 +30,5 @@ export class ListComponent implements AfterViewInit, OnInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
-  form() {
-    this.router.navigateByUrl('orders/form/')
-  }
+
 }
