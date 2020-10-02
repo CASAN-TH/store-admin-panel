@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent {
+export class FormComponent implements OnInit{
   addressForm = this.fb.group({
     company: null,
     firstName: [null, Validators.required],
@@ -22,7 +24,7 @@ export class FormComponent {
   });
 
   hasUnitNumber = false;
-
+  id: any;
   states = [
     {name: 'Alabama', abbreviation: 'AL'},
     {name: 'Alaska', abbreviation: 'AK'},
@@ -85,7 +87,14 @@ export class FormComponent {
     {name: 'Wyoming', abbreviation: 'WY'}
   ];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private route: ActivatedRoute,private productService: ProductService) {}
+
+  ngOnInit(){
+    this.id = this.route.snapshot.params.id;
+    this.productService.getProductById(this.id).subscribe((res:any) => {
+      console.log(res);
+    })
+  }
 
   onSubmit() {
     alert('Thanks!');

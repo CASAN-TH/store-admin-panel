@@ -1,8 +1,1 @@
-[
-    {"id":4,"name":"Civic","brand":"Honda","madeIn":"Japan","price":"29000.0"},
-    {"id":103,"name":"MacBook","brand":"Apple","madeIn":"Idonesia","price":"1099.0"},
-    {"id":104,"name":"iPhone10","brand":"Apple","madeIn":"USA","price":"999.0"},
-    {"id":105,"name":"Kindla Fire","brand":"Amazon","madeIn":"Malaysia","price":"79.0"},
-    {"id":106,"name":"Ecovacs Deboot Robot","brand":"Ecovacs","madeIn":"China","price":"299.0"},
-    {"id":107,"name":"Vinfast Lux 2.0","brand":"Vinfat","madeIn":"Vietnam","price":"189000.0"}
-  ]
+{"id":4,"name":"Civic","brand":"Honda","madeIn":"Japan","price":"29000.0"}

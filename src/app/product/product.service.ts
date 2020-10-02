@@ -11,7 +11,12 @@ export class ProductService {
 
   constructor(private http:HttpClient) { }
   getProduct():Observable<any[]> {
-  return this.http.get<any[]>('../../assets/product.json')
+  return this.http.get<any[]>('../../assets/products.json')
+  }
+
+  getProductById(id): Observable<any>{
+    console.log(id);
+    return this.http.get<any>('../../assets/product.json');
   }
 
 }
